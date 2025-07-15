@@ -1,0 +1,27 @@
+name:Python CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+   build:
+
+      runs-on: ununtu-latest
+
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up python
+        uses: actions/setu[-python@v5
+        with:
+          python-version:'3.9'
+
+      - name: Install dependencies
+        run: |
+          python app.py &
+          sleep 5
+          curl -f http://localhost:5000
